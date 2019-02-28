@@ -2,7 +2,7 @@ import os
 import time
 import random
 
-filename = 'data/{}.txt'.format('c')
+filename = 'data/{}.txt'.format('e')
 
 with open(filename) as f_in:
     content = f_in.read().split("\n")[:-1]
@@ -145,13 +145,13 @@ if __name__ == '__main__':
                 vertical_images.remove(c2)
                 slides.append(Slide(c1, c2))
             else:
-                slides.append(Slide(c1))
                 break
         else:
             break
 
     # matching slides
     # TODO Make it smart
+    """
     output_data = []
     for slide in slides:
         app = []
@@ -161,10 +161,10 @@ if __name__ == '__main__':
     print(output_data)
     print("Score data:", eval_output(output_data))
     create_output_file([[y[0] for y in x] for x in output_data])
+    """
     scores = []
     for ctr in range(0, 20000):
-        if ctr % 1000 == 0:
-            print(ctr)
+        print(ctr)
         output_dict = {}
         available_locations = [x for x in range(0, len(slides))]
         for slide in slides:

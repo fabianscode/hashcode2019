@@ -2,7 +2,7 @@ import os
 import time
 import random
 
-filename = 'data/{}.txt'.format('c')
+filename = 'data/{}.txt'.format('a')
 
 with open(filename) as f_in:
     content = f_in.read().split("\n")[:-1]

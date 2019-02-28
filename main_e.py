@@ -2,7 +2,7 @@ import os
 import time
 import random
 
-filename = 'data/{}.txt'.format('c')
+filename = 'data/{}.txt'.format('e')
 
 with open(filename) as f_in:
     content = f_in.read().split("\n")[:-1]
@@ -145,7 +145,6 @@ if __name__ == '__main__':
                 vertical_images.remove(c2)
                 slides.append(Slide(c1, c2))
             else:
-                slides.append(Slide(c1))
                 break
         else:
             break
@@ -158,7 +157,6 @@ if __name__ == '__main__':
         for img in slide.images:
             app.append([img.id, img.tags])
         output_data.append(app)
-    print(output_data)
     print("Score data:", eval_output(output_data))
     create_output_file([[y[0] for y in x] for x in output_data])
     scores = []
